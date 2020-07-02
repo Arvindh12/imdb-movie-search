@@ -1,6 +1,7 @@
 
 async function getmovies(){
     title= document.getElementById("input-field").value;
+    if (title == "") return
     var poster = document.getElementById("poster")
     poster.src  = "https://cdn.lowgif.com/medium/76aaf121d5d74581-loop-loading-gif-by-derek-fitzpatrick-find-share-on-giphy.gif"
 
@@ -28,13 +29,23 @@ async function getmovies(){
     RunTime.innerHTML = "" ;
     Director.innerHTML = "" ;
 
-    
+    try{
     var res1 = await fetch(`https://www.omdbapi.com/?s=${title}&plot=full&apikey=aab51e76`);
     var data1 = await res1.json();
+    if(data1.Response == "False" ) {
+        Title.innerText = data1.Error;
+        poster.src  = "";
+        return
+    }
     console.log(data1)
     var id = data1.Search[0].imdbID
     var res2 = await fetch(`https://www.omdbapi.com/?i=${id}&plot=full&apikey=aab51e76`);
     var data2 = await res2.json()
+    }
+    catch(err){
+        console.log(err)
+        poster.src  = "";
+    }
     
     Title.previousSibling.previousSibling.innerHTML = "Title" ;
     Title.innerText = data2.Title +" ("+ data2.Year + ")"
