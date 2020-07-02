@@ -29,11 +29,11 @@ async function getmovies(){
     Director.innerHTML = "" ;
 
     
-    var res1 = await fetch(`http://www.omdbapi.com/?s=${title}&plot=full&apikey=aab51e76`);
+    var res1 = await fetch(`https://www.omdbapi.com/?s=${title}&plot=full&apikey=aab51e76`);
     var data1 = await res1.json();
     console.log(data1)
     var id = data1.Search[0].imdbID
-    var res2 = await fetch(`http://www.omdbapi.com/?i=${id}&plot=full&apikey=aab51e76`);
+    var res2 = await fetch(`https://www.omdbapi.com/?i=${id}&plot=full&apikey=aab51e76`);
     var data2 = await res2.json()
     
     Title.previousSibling.previousSibling.innerHTML = "Title" ;
