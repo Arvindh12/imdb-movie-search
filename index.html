@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="./index.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+    <div class="row">
+<div class="col-12 ">
+    <div class="jumbotron pb-1 mb-1" style="padding: 0px 10px ;">
+        <h1 class="display-4">Search for movies!</h1>
+        <p class="lead">Search for your favourite movies in one place.</p>
+        <hr class="my-3">
+        
+        
+        <div class="jumbotron p-3 mb-1 shadow-sm">
+         
+              <div class="d-flex align-items-center">
+                <input id="input-field" autofocus="" autocomplete="off" name="item" class="form-control mr-3" type="text" style="flex: 1;" required>
+                <button onclick="getmovies()" class="btn btn-primary">Search</button>
+              </div>
+        
+          </div>
+        </div>
+    </div>
+        </div>
+        
+        <div class="row" >
+<div class="col-md-4" style="text-align: center;"><img src="" id="poster" alt=""></div>
+<div class="col-md-8">
+
+    <dl class="row">
+        <dt class="col-sm-3"></dt>
+        <dd class="col-sm-9" id="Title"></dd>
+      
+        <dt class="col-sm-3"></dt>
+        <dd class="col-sm-9" id="Genre">
+      
+        </dd>
+      
+        <dt class="col-sm-3"></dt>
+        <dd class="col-sm-9" id="Actors"></dd>
+      
+        <dt class="col-sm-3 text-truncate"></dt>
+        <dd class="col-sm-9" id="Plot"></dd>
+      
+        <dt class="col-sm-3" id="info"></dt>
+        <dd class="col-sm-9">
+          <dl class="row">
+            <dt class="col-sm-4"></dt>
+            <dd class="col-sm-8" id="Ratings"></dd>
+          </dl>
+          <dl class="row">
+            <dt class="col-sm-4"></dt>
+            <dd class="col-sm-8" id="RunTime"></dd>
+          </dl>
+          <dl class="row">
+            <dt class="col-sm-4"></dt>
+            <dd class="col-sm-8" id="Director"></dd>
+          </dl>
+        </dd>
+      </dl>
+
+</div>
+        </div>
+
+      </div>
+</body>
+</html>
